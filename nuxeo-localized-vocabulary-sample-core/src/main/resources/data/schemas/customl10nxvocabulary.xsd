@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xs:schema
+    targetNamespace="http://www.nuxeo.org/ecm/schemas/customl10nxvocabulary"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="id" type="xs:string"/>
+    <xs:element name="parent" type="xs:string"/>
+    <xs:element name="label_en" type="xs:string"/>
+    <xs:element name="label_fr" type="xs:string"/>
+    <xs:element name="label_es" type="xs:string"/>
+    <xs:element name="label_de" type="xs:string"/>
+    <xs:element name="obsolete" type="xs:integer" default="0"/>
+
+</xs:schema>

@@ -1,0 +1,11 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: org.nuxeo.samples.vocabulary
+Bundle-Version: 1.0.0
+Bundle-Name: nuxeo-localized-vocabulary-sample-core
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nuxeo-localized-vocabulary-sample-core;singleton=true
+Nuxeo-Component: OSGI-INF/schema-contrib.xml,
+    OSGI-INF/directory-contrib.xml,
+    OSGI-INF/ui-contrib.xml

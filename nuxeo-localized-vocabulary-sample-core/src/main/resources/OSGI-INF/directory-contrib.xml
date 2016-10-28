@@ -1,0 +1,16 @@
+<component name="org.nuxeo.samples.vocabularies.l10n.directory">
+    <extension point="directories" target="org.nuxeo.ecm.directory.sql.SQLDirectoryFactory">
+        <directory name="customl10ncoverage">
+            <schema>customl10nxvocabulary</schema>
+            <parentDirectory>customl10nxvocabulary</parentDirectory>
+            <dataSource>java:/nxsqldirectory</dataSource>
+            <cacheTimeout>3600</cacheTimeout>
+            <cacheMaxSize>1000</cacheMaxSize>
+            <table>customl10nxvocabulary</table>
+            <idField>id</idField>
+            <autoincrementIdField>false</autoincrementIdField>
+            <createTablePolicy>on_missing_columns</createTablePolicy>
+            <dataFile>data/vocabularies/custom_coverage_sample.csv</dataFile>
+        </directory>
+    </extension>
+</component>
