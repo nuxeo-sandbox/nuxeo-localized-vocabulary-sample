@@ -1,0 +1,124 @@
+<!--
+@license
+(C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!--
+`nuxeo-extendedl10nxvocabulary-edit-layout`
+@group Nuxeo UI
+@element nuxeo-extendedl10nxvocabulary-edit-layout
+-->
+<dom-module id="nuxeo-extendedl10nxvocabulary-edit-layout">
+    <template>
+        <style include="iron-flex iron-positioning nuxeo-styles">
+            *[role=widget] {
+                margin-bottom: 16px;
+            }
+
+             label {
+                @apply --nuxeo-label;
+            }
+        </style>
+
+        <nuxeo-directory-suggestion value="{{entry.properties.parent}}" label="[[i18n('vocabularyManagement.edit.parent')]]"
+                                    directory-name="[[entry.directoryName]]" name="parent" role="widget" min-chars="0"
+                                    dbl10n="true" can-select-parent="true">
+        </nuxeo-directory-suggestion>
+
+        <nuxeo-input role="widget"
+                     label="[[i18n('vocabularyManagement.edit.id')]]"
+                     name="id"
+                     value="{{entry.properties.id::change}}"
+                     readonly$="[[!new]]"
+                     required>
+        </nuxeo-input>
+
+        <nuxeo-input role="widget"
+                     label="[[i18n('vocabularyManagement.edit.label_en')]]"
+                     name="label_en"
+                     value="{{entry.properties.label_en}}"
+                     required>
+        </nuxeo-input>
+
+        <nuxeo-input role="widget"
+                     label="[[i18n('vocabularyManagement.edit.label_fr')]]"
+                     name="label_fr"
+                     value="{{entry.properties.label_fr}}">
+        </nuxeo-input>
+
+        <nuxeo-input role="widget"
+                     label="[[i18n('vocabularyManagement.edit.label_pt')]]"
+                     name="label_pt"
+                     value="{{entry.properties.label_pt}}">
+        </nuxeo-input>
+
+        <nuxeo-input role="widget"
+                     label="[[i18n('vocabularyManagement.edit.label_ja')]]"
+                     name="label_ja"
+                     value="{{entry.properties.label_ja}}">
+        </nuxeo-input>
+
+        <div role="widget">
+            <label>[[i18n('vocabularyManagement.edit.obsolete')]]</label>
+            <paper-toggle-button checked$="[[_isObsolete(entry.properties.obsolete)]]"
+                                 on-change="_obsoleteChanged"
+                                 noink>
+            </paper-toggle-button>
+        </div>
+
+        <nuxeo-input role="widget"
+                     label="[[i18n('vocabularyManagement.edit.ordering')]]"
+                     name="ordering"
+                     type="number"
+                     value="{{entry.properties.ordering::change}}">
+        </nuxeo-input>
+
+    </template>
+
+    <script>
+        Polymer({
+            is: 'nuxeo-extendedl10nxvocabulary-edit-layout',
+            behaviors: [Nuxeo.I18nBehavior],
+            properties: {
+                entry: {
+                    type: Object,
+                    observer: '_entryChanged'
+                },
+
+                new: {
+                    type: Boolean,
+                    value: false
+                },
+
+                entries: {
+                    type: Array
+                }
+            },
+
+            _entryChanged: function () {
+                this.entry.properties.obsolete = this.entry.properties.obsolete ? 1 : 0;
+            },
+
+            _isObsolete: function (obsolete) {
+                return obsolete === 1;
+            },
+
+            _obsoleteChanged: function () {
+                this.entry.properties.obsolete = this.entry.properties.obsolete > 0 ? 0 : 1;
+            }
+        });
+
+    </script>
+</dom-module>

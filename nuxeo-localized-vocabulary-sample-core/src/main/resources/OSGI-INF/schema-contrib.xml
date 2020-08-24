@@ -1,5 +1,5 @@
 <component name="org.nuxeo.samples.vocabularies.l10n.schema">
     <extension target="org.nuxeo.ecm.core.schema.TypeService" point="schema">
-        <schema name="customl10nxvocabulary" src="data/schemas/customl10nxvocabulary.xsd"/>
+        <schema name="extendedl10nxvocabulary" src="data/schemas/extendedl10nxvocabulary.xsd"/>
     </extension>
 </component>

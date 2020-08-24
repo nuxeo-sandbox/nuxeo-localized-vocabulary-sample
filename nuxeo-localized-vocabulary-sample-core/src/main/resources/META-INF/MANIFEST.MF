@@ -7,5 +7,4 @@ Bundle-Name: nuxeo-localized-vocabulary-sample-core
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: nuxeo-localized-vocabulary-sample-core;singleton=true
 Nuxeo-Component: OSGI-INF/schema-contrib.xml,
-    OSGI-INF/directory-contrib.xml,
-    OSGI-INF/ui-contrib.xml
+    OSGI-INF/directory-contrib.xml

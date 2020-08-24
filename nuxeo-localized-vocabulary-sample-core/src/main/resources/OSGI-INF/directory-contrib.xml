@@ -1,16 +1,16 @@
 <component name="org.nuxeo.samples.vocabularies.l10n.directory">
-    <extension point="directories" target="org.nuxeo.ecm.directory.sql.SQLDirectoryFactory">
-        <directory name="customl10ncoverage">
-            <schema>customl10nxvocabulary</schema>
-            <parentDirectory>customl10nxvocabulary</parentDirectory>
-            <dataSource>java:/nxsqldirectory</dataSource>
-            <cacheTimeout>3600</cacheTimeout>
-            <cacheMaxSize>1000</cacheMaxSize>
-            <table>customl10nxvocabulary</table>
+    <extension point="directories" target="org.nuxeo.ecm.directory.GenericDirectory">
+        <directory extends="template-directory" name="sample_l10_vocabulary">
+            <schema>extendedl10nxvocabulary</schema>
             <idField>id</idField>
-            <autoincrementIdField>false</autoincrementIdField>
-            <createTablePolicy>on_missing_columns</createTablePolicy>
-            <dataFile>data/vocabularies/custom_coverage_sample.csv</dataFile>
+            <parentDirectory>sample_l10_vocabulary</parentDirectory>
+            <dataFile>data/vocabularies/sample_l10n_vocabulary.csv</dataFile>
+            <entryCacheName>sample_l10_vocabulary-cache</entryCacheName>
+            <entryCacheWithoutReferencesName>sample_l10_vocabulary-cache-without-ref</entryCacheWithoutReferencesName>
+            <deleteConstraint class="org.nuxeo.ecm.directory.HierarchicalDirectoryDeleteConstraint">
+                <property name="targetDirectory">sample_l10_vocabulary</property>
+                <property name="targetDirectoryField">parent</property>
+            </deleteConstraint>
         </directory>
     </extension>
 </component>

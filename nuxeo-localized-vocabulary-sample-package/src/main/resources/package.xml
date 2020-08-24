@@ -16,12 +16,16 @@
   <production-state>testing</production-state>
   <supported>false</supported>
   <platforms>
-    <platform>cap-@DISTRIB_VERSION@</platform>
-    <platform>cap-@DISTRIB_VERSION@-HF*</platform>
+    <platform>server-@DISTRIB_VERSION@</platform>
+    <platform>server-@DISTRIB_VERSION@-HF*</platform>
   </platforms>
   <!-- Dependencies on other packages -->
   <!-- <dependencies> -->
   <!-- <package>another-package:1.0.0:1.0.0</package> -->
+  <!-- If you require JSF UI package:  -->
+  <!-- <package>nuxeo-jsf-ui</package> -->
+  <!-- If you require WEB UI package:  -->
+  <!-- <package>nuxeo-web-ui</package> -->
   <!-- </dependencies> -->
   <!-- Conflicts with other packages -->
   <!-- <conflicts> -->
@@ -31,8 +35,8 @@
   <!-- <provides> -->
   <!-- <package>an-embedded-package:1.0.0:1.0.0</package> -->
   <!-- </provides> -->
-  <license>Apache License, Version 2.0</license>
-  <license-url>http://www.apache.org/licenses/LICENSE-2.0</license-url>
+  <license></license>
+  <license-url></license-url>
   <!-- Visibility: PRIVATE | MARKETPLACE | DEV | PUBLIC -->
   <visibility>DEV</visibility>
 </package>
